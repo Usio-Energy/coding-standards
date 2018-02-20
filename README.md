@@ -1,8 +1,6 @@
-# 🐍 Babylon Python Style Guide
+# 🐍 Coding Standards
 
-
-This document is constructed from the results of a poll across the Python Team. It is however not "final". **Pull requests welcome** to evolve it over time.
-
+This is not "final". **Pull requests welcome** to evolve it over time.
 
 1. [Documentation](#documentation)
 2. [Testing](#testing)
@@ -12,28 +10,26 @@ This document is constructed from the results of a poll across the Python Team. 
 6. [Python Packaging](#python-packaging)
 7. [Design](e#design)
 8. [Pull requests](#pull-requests)
+9. [Deployment](#deployment)
+10. [Configuration](#configuration)
 
+## Documentation
 
-### Documentation
+- Each project must have a README.md file.
+- README file must provide instructions to: build project, run tests, run project locally.
 
-- Each project must have a README file (in markdown or rst format).
-- README must provide instructions to: build project, run tests, run project locally, contact team owning it
-- Use CONTRIBUTING file to provide any project-specific conventions or how-to details developers need to know when working on the project.
-
-
-### Testing
+## Testing
 
 - Tests should be written using py.test (https://docs.pytest.org).
-- Each project must report [coverage](https://coverage.readthedocs.io) and publish results to [codeclimate](https://codeclimate.com).
-- Each project should display coverage & code climate score "badges" in README file.
+- Coverage levels should be reported in CI builds.
 - Tests should be integration tests where possible. Try not to go overboard with Mocking (vague statement, judge case by case).
 
-
-### Coding style / Linting
+## Coding style / Linting
 
 - Each project must have a [flake8](https://pypi.python.org/pypi/flake8) linter.
 - Each project must follow [PEP8](https://www.python.org/dev/peps/pep-0008/) (inc. 79 chars limit).
 - Docstrings must follow PEP257 (https://www.python.org/dev/peps/pep-0257/).
+- Docstrings must be in [Google style](http://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html), use [pydocstyle](https://github.com/PyCQA/pydocstyle) to validate.
 - Functions with more than 1 parameter must [force keyword arguments](https://www.python.org/dev/peps/pep-3102/).
 - All class `__init__` methods must [force keyword arguments](https://www.python.org/dev/peps/pep-3102/).
 - Follow Python [EAFP principal](http://python.net/~goodger/projects/pycon/2007/idiomatic/handout.html#eafp-vs-lbyl) where possible.
@@ -48,41 +44,27 @@ This document is constructed from the results of a poll across the Python Team. 
 - Don't use single letter variable names, unless within a list comprehension.
 - Never put any code in the `__init__.py` of a module (except namespace stitching imports).
 
-
-### Exceptions
+## Exceptions
 
 - Only define custom exceptions when you have a need to catch it specifically.
 - Use [standard libary exceptions](https://docs.python.org/3/library/exceptions.html) where possible.
 - Always include a descriptive message when an exception is raised.
 
-### Code Organisation
+## Code Organisation
 
 - Project should have a single top-level Python package.
-- Project requirements should be split into `requirements.txt` `test_requirements.txt` files etc.
+- Project requirements should be split into `requirements.txt` `requirements-dev.txt` files etc.
 
-
-### Python Packaging
+## Python Packaging
 
 - Python Packages must follow [Semantic Versioning](http://semver.org/).
-- Reusable (non project specific) code should live in "[babylon-python](https://github.com/Babylonpartners/babylon-python)", or be open-sourced and added to [PyPI](https://pypi.python.org/pypi) (devops have the babylon PyPI credentials).
 
-### Design
+## Deployment
 
-- Use Abstract Base Classes to enforce conventions in your projects, where it makes sense.
+- Project should contain a `Dockerfile` for deployment.
+- Project should include an Ansible + AWS Cloudformation configuration for deployment.
 
-### Pull requests
+## Configuration
 
-- When merging a pull request, please squash and use the following message template:
-
-```
-Context:
-Why this PR was needed
-
-Solution:
-What you implemented
-
-Tests:
-How your solution is tested (if applicable)
-```
-
-[Github suggests a way](https://github.com/blog/2111-issue-and-pull-request-templates) to define a template per project for pull requests and issues. Ensure your project uses it.
+- Project configration should come from environment variables, no hardcoded per-environment values in the codebase.
+- Secrets must be stored in ansible-vault.
