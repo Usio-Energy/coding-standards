@@ -8,7 +8,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 4. [Exceptions](#exceptions)
 5. [Code Organisation](#code-organisation)
 6. [Python Packaging](#python-packaging)
-7. [Design](e#design)
+7. [Design](#design)
 8. [Pull requests](#pull-requests)
 9. [Deployment](#deployment)
 10. [Configuration](#configuration)
@@ -20,9 +20,11 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 
 ## Testing
 
-- Tests should be written using py.test (https://docs.pytest.org).
+- Tests must be written using py.test (https://docs.pytest.org).
 - Coverage levels should be reported in CI builds.
 - Tests should be integration tests where possible. Try not to go overboard with Mocking (vague statement, judge case by case).
+- ReactJS components must have unit tests.
+- If the application has a front-end, user journeys should be covered with selenium (BDD style or other) tests, to ensure it they continue to function.
 
 ## Coding style / Linting
 
@@ -53,7 +55,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 ## Code Organisation
 
 - Project should have a single top-level Python package.
-- Project requirements should be split into `requirements.txt` `requirements-dev.txt` files etc.
+- Project requirements must be split into `requirements.txt` `requirements-dev.txt` files etc.
 
 ## Python Packaging
 
@@ -61,10 +63,14 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 
 ## Deployment
 
-- Project should contain a `Dockerfile` for deployment.
-- Project should include an Ansible + AWS Cloudformation configuration for deployment.
+- Project must contain a `Dockerfile` for deployment.
+- Project must include an Ansible + AWS Cloudformation configuration for deployment.
 
 ## Configuration
 
-- Project configration should come from environment variables, no hardcoded per-environment values in the codebase.
-- Secrets must be stored in ansible-vault.
+- Project configration must come from environment variables, no hardcoded per-environment values in the codebase.
+- Deployment Secrets must be stored in ansible-vault.
+
+## Misc
+
+- Use Python version 3.6 or above.
