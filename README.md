@@ -12,6 +12,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 8. [Pull requests](#pull-requests)
 9. [Deployment](#deployment)
 10. [Configuration](#configuration)
+11. [Misc](#misc)
 
 ## Documentation
 
