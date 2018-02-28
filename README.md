@@ -46,6 +46,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
   ```
 - Don't use single letter variable names, unless within a list comprehension.
 - Never put any code in the `__init__.py` of a module (except namespace stitching imports).
+- Use f-strings (https://www.python.org/dev/peps/pep-0498/) instead of `str.format`.
 
 ## Exceptions
 
