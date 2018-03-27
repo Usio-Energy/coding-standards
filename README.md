@@ -85,5 +85,3 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 - Step 3: Discuss & fix discovered issues.
 - Step 4: Request another check from the reviewer. Reviewer then "approves" or back to Step 3.
 - Step 5: Merge pull request.
-
-> Reviewing each other’s code is a necessary step in any modern development team’s workflow. Just like a book author wouldn’t publish a book without an editor’s review, a developer should never release work without having it reviewed first.
