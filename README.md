@@ -13,6 +13,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 9. [Deployment](#deployment)
 10. [Configuration](#configuration)
 11. [Misc](#misc)
+12. [Code Review Flow](#code-review-flow)
 
 ## Documentation
 
@@ -76,3 +77,13 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 ## Misc
 
 - Use Python version 3.6 or above.
+
+## Code Review Flow
+
+- Step 1: Write code and [request a review](https://help.github.com/articles/requesting-a-pull-request-review/).
+- Step 2: Review code and [submit feedback](https://help.github.com/articles/about-pull-request-reviews/).
+- Step 3: Discuss & fix discovered issues.
+- Step 4: Request another check from the reviewer. Reviewer then "approves" or back to Step 3.
+- Step 5: Merge pull request.
+
+> Reviewing each other’s code is a necessary step in any modern development team’s workflow. Just like a book author wouldn’t publish a book without an editor’s review, a developer should never release work without having it reviewed first.
