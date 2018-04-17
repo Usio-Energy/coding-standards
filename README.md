@@ -26,6 +26,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 - Tests should be integration tests where possible. Try not to go overboard with Mocking (vague statement, judge case by case).
 - ReactJS components must have unit tests.
 - If the application has a front-end, user journeys should be covered with selenium (BDD style or other) tests, to ensure they continue to function.
+- Unhappy paths and edge case scenarios must be tested for, not just the happy path.
 
 ## Coding style / Linting
 
