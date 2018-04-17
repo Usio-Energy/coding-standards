@@ -63,6 +63,8 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 ## Python Packaging
 
 - Python Packages must follow [Semantic Versioning](http://semver.org/).
+- Must contain a HISTORY.rst file.
+- Must use [Zest.releaser](https://zestreleaser.readthedocs.io/en/latest/) for releases.
 
 ## Deployment
 
