@@ -8,11 +8,9 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 4. [Exceptions](#exceptions)
 5. [Code Organisation](#code-organisation)
 6. [Python Packaging](#python-packaging)
-7. [Design](#design)
-8. [Pull requests](#pull-requests)
-9. [Deployment](#deployment)
-10. [Configuration](#configuration)
-11. [Misc](#misc)
+7. [Deployment](#deployment)
+8. [Configuration](#configuration)
+9. [Misc](#misc)
 
 ## Documentation
 
@@ -21,6 +19,7 @@ This is not "final". **Pull requests welcome** to evolve it over time.
 
 ## Testing
 
+- Always strive for 100% test coverage (with auto generated code and configuration variable modules being reasonable exceptions).
 - Tests must be written using py.test (https://docs.pytest.org).
 - Coverage levels should be reported in CI builds.
 - Tests should be integration tests where possible. Try not to go overboard with Mocking (vague statement, judge case by case).
